@@ -1,4 +1,5 @@
-﻿using System;
+﻿using menuCajero.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,8 @@ namespace menuCajero.Servicios
     {
         //metodo darAltaCliente
         //public void darAltaCliente(List<ClienteDto> listaAntigua);
+
+        public void darAltaCliente(List<ClienteDto> listaAntigua);
+
     }
 }

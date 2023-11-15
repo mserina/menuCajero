@@ -40,6 +40,7 @@ namespace menuCajero{
                     case 1:
                         Console.WriteLine("[INFO] - ALTA NUEVO CLIENTE");
                         ci.darAltaCliente(listaClientes);
+                        
                         break;
                     case 2:
                         Console.WriteLine("[INFO] - Se ejecuta caso 2");

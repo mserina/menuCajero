@@ -45,9 +45,8 @@ namespace menuCajero.Dto
 
         //CONTRUCTORES (metodos que crean objetos -new) (
 
-        public ClienteDto(long idCliente, string nombreCliente, string apellidosCliente, string dniCliente, string fchaNacimientoCliente, string emailCliente, int tlfCliente, string fchaAltaCliente)
+        public ClienteDto(string nombreCliente, string apellidosCliente, string dniCliente, string fchaNacimientoCliente, string emailCliente, int tlfCliente, string fchaAltaCliente, string fchaBajaCliente)
         {
-            this.idCliente = idCliente;
             this.nombreCliente = nombreCliente;
             this.apellidosCliente = apellidosCliente;
             this.dniCliente = dniCliente;
@@ -55,6 +54,8 @@ namespace menuCajero.Dto
             this.emailCliente = emailCliente;
             this.tlfCliente = tlfCliente;
             this.fchaAltaCliente = fchaAltaCliente;
+            this.fchaBajaCliente = fchaBajaCliente;
+
         }
 
         public ClienteDto() { 
