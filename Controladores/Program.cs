@@ -6,6 +6,7 @@ namespace menuCajero{
     /// </summary>
     class Program
     {
+
         /// <summary>
         ///  Metodo de entrada a la aplicacion 
         ///  contiene el procedimiento de nuestra aplicacion
@@ -14,10 +15,11 @@ namespace menuCajero{
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            //Llamada al metodo que imprime el mensaje por consola
+            List<ClienteDto> listaClientes = new List<ClienteDto>();
+
 
             MenuInterfaz mi = new MenuImplementacion();
-            mi.mensajeBienvenida();
+            ClaseInterfaz ci = new ClienteImplementacion();
 
             //variable que conrola la  entrada y salida del bucle 
             bool cerrarMenu = false;
@@ -36,7 +38,8 @@ namespace menuCajero{
                         cerrarMenu |= true;
                         break;
                     case 1:
-                        Console.WriteLine("[INFO] - Se ejecuta caso 1");
+                        Console.WriteLine("[INFO] - ALTA NUEVO CLIENTE");
+                        ci.darAltaCliente();
                         break;
                     case 2:
                         Console.WriteLine("[INFO] - Se ejecuta caso 2");
