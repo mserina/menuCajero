@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace menuCajero.ClienteDto
+namespace menuCajero.Dto
 {
     internal class ClienteDto
     {
@@ -56,6 +56,7 @@ namespace menuCajero.ClienteDto
             this.tlfCliente = tlfCliente;
             this.fchaAltaCliente = fchaAltaCliente;
         }
+
         public ClienteDto() { 
         }
 

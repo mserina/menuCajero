@@ -1,4 +1,5 @@
 ﻿using menuCajero.Servicios;
+using menuCajero.Dto;
 
 namespace menuCajero{
     /// <summary>
@@ -6,7 +7,6 @@ namespace menuCajero{
     /// </summary>
     class Program
     {
-
         /// <summary>
         ///  Metodo de entrada a la aplicacion 
         ///  contiene el procedimiento de nuestra aplicacion
@@ -19,7 +19,7 @@ namespace menuCajero{
 
 
             MenuInterfaz mi = new MenuImplementacion();
-            ClaseInterfaz ci = new ClienteImplementacion();
+            ClienteInterfaz ci = new ClienteImplementacion();
 
             //variable que conrola la  entrada y salida del bucle 
             bool cerrarMenu = false;
@@ -39,7 +39,7 @@ namespace menuCajero{
                         break;
                     case 1:
                         Console.WriteLine("[INFO] - ALTA NUEVO CLIENTE");
-                        ci.darAltaCliente();
+                        ci.darAltaCliente(listaClientes);
                         break;
                     case 2:
                         Console.WriteLine("[INFO] - Se ejecuta caso 2");

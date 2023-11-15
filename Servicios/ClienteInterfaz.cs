@@ -9,6 +9,6 @@ namespace menuCajero.Servicios
     internal interface ClienteInterfaz
     {
         //metodo darAltaCliente
-
+        //public void darAltaCliente(List<ClienteDto> listaAntigua);
     }
 }
