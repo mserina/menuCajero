@@ -1,5 +1,5 @@
 ﻿using menuCajero.Servicios;
-using menuCajero.Dto;
+using menuCajero.Dtos;
 
 namespace menuCajero{
     /// <summary>
@@ -16,10 +16,12 @@ namespace menuCajero{
         static void Main(string[] args)
         {
             List<ClienteDto> listaClientes = new List<ClienteDto>();
+            List<CuentaDto> listaCuenta = new List<CuentaDto>();
 
 
             MenuInterfaz mi = new MenuImplementacion();
             ClienteInterfaz ci = new ClienteImplementacion();
+            CuentaBancariaInterfaz cb = new CuentaBancariaImplementacion();
 
             //variable que conrola la  entrada y salida del bucle 
             bool cerrarMenu = false;
@@ -43,7 +45,13 @@ namespace menuCajero{
                         
                         break;
                     case 2:
-                        Console.WriteLine("[INFO] - Se ejecuta caso 2");
+                        Console.WriteLine("[INFO] - CREAR NUEVA CUENTA");
+                        cb.darAltaCuenta(listaCuenta);
+                        foreach (CuentaDto cuentaDto in listaCuenta)
+                        {
+                            Console.WriteLine(cuentaDto.ToString());
+                        }
+                       
                         break;
                     case 3:
                         Console.WriteLine("[INFO] - Se ejecuta caso 3");

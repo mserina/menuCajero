@@ -4,8 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace menuCajero.Dto
+namespace menuCajero.Dtos
 {
+    /// <summary>
+    /// Clase que se almacena los campos y metodos de un cliente
+    /// 22112023 - msms
+    /// </summary>
     internal class ClienteDto
     {
         //ATRIBUTOSS (CARACTERISTICAS)
@@ -45,8 +49,9 @@ namespace menuCajero.Dto
 
         //CONTRUCTORES (metodos que crean objetos -new) (
 
-        public ClienteDto(string nombreCliente, string apellidosCliente, string dniCliente, string fchaNacimientoCliente, string emailCliente, int tlfCliente, string fchaAltaCliente, string fchaBajaCliente)
+        public ClienteDto(long idCliente,string nombreCliente, string apellidosCliente, string dniCliente, string fchaNacimientoCliente, string emailCliente, int tlfCliente, string fchaAltaCliente)
         {
+            this.idCliente = idCliente;
             this.nombreCliente = nombreCliente;
             this.apellidosCliente = apellidosCliente;
             this.dniCliente = dniCliente;
@@ -54,8 +59,6 @@ namespace menuCajero.Dto
             this.emailCliente = emailCliente;
             this.tlfCliente = tlfCliente;
             this.fchaAltaCliente = fchaAltaCliente;
-            this.fchaBajaCliente = fchaBajaCliente;
-
         }
 
         public ClienteDto() { 

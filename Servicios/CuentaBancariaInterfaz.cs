@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace menuCajero.Servicios
 {
-    internal interface ClienteInterfaz
+    internal interface CuentaBancariaInterfaz
     {
-       
         /// <summary>
-        /// Metodo que da de alta a los clientes
+        /// Metodo que da de alta las cuentas
         /// msm - 22112023
         /// </summary>
-        /// <param name="listaAntigua"></param>
-        public void darAltaCliente(List<ClienteDto> listaAntigua);
+        public void darAltaCuenta(List<CuentaDto> listaCuentaAntigua);
 
-    }
+    } 
 }
+

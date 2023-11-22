@@ -1,4 +1,4 @@
-﻿using menuCajero.Dto;
+﻿using menuCajero.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,6 @@ namespace menuCajero.Servicios
         //          creo un cliente (crearNuevoCliente) <--metodo
         //          añado a listaAntigua el cliente
         //}
-
         //private ClienteDto crearNuevoCliente()
 
         public void darAltaCliente(List <ClienteDto> listaAntigua)
@@ -26,6 +25,7 @@ namespace menuCajero.Servicios
 
         private ClienteDto crearNuevoCliente()
         {
+            long idCliente;
             string nombreCliente;
             string apellidosCliente;
             string dniCliente;
@@ -33,8 +33,10 @@ namespace menuCajero.Servicios
             string emailCliente;
             int tlfCliente;
             string fchaAltCliente;
-            string fchaBajaCliente;
 
+            Console.WriteLine("Inserta id");
+            idCliente = Convert.ToInt64(Console.ReadKey());
+            
             Console.WriteLine("Dame nombre");
             nombreCliente = Console.ReadLine();
 
@@ -56,11 +58,9 @@ namespace menuCajero.Servicios
             Console.WriteLine("Dame fecha de alta");
             fchaAltCliente = Console.ReadLine();
 
-            Console.WriteLine("Dame fecha de baja");
-            fchaBajaCliente = Console.ReadLine();
 
 
-            ClienteDto clienteNuevo = new ClienteDto(nombreCliente, apellidosCliente, dniCliente, fchaNacimientoCliente, emailCliente, tlfCliente, fchaAltCliente, fchaBajaCliente);
+            ClienteDto clienteNuevo = new ClienteDto(idCliente, nombreCliente, apellidosCliente, dniCliente, fchaNacimientoCliente, emailCliente, tlfCliente, fchaAltCliente);
             return clienteNuevo;
         }
 
