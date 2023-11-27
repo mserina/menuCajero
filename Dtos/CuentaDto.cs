@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace menuCajero.Dtos
 {
+    /// <summary>
+    /// Clase que se almacena los campos y metodos de las cuentas bancarias
+    /// 22112023 - msms
+    /// </summary>
     internal class CuentaDto
     {
 
-        //ATRIBUTOS 
+        //ATRIBUTOS/CAMPOS 
         long id;
 
-        int isban;
+        int isban = 22222;
 
         string codigoSwitch = "CSI1SSXX";
 
-        string fechaDeAlta;
+        string fechaDeAlta = "9999/12/31";
 
         string fecha_de_baja = "9999/12/31";
 
-        string dniUsuario;
+        string dniUsuario = "AAAAA";
 
 
 

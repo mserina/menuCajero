@@ -14,6 +14,11 @@ namespace menuCajero.Servicios
                 CuentaDto cuentaDto = CuentaNuev();
                 listaCuentaAntigua.Add(cuentaDto);
             }
+        /// <summary>
+        /// Crear una cuenta bancaria
+        /// msm - 271123
+        /// </summary>
+        /// <returns>nueva cuenta bnacaria con la informacion solicitada</returns>
         private CuentaDto CuentaNuev()
         {
             CuentaDto nuevaCuenta = new CuentaDto();
