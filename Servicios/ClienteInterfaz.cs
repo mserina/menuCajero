@@ -17,5 +17,6 @@ namespace menuCajero.Servicios
         /// <param name="listaAntigua"></param>
         public void darAltaCliente(List<ClienteDto> listaAntigua);
 
+        public void modificarCliente(List<ClienteDto> listaAntigua);
     }
 }

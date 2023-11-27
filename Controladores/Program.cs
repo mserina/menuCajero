@@ -27,6 +27,7 @@ namespace menuCajero{
             bool cerrarMenu = false;
             //contener la opcion del usuario
             int opcionSelecionada;
+            string respuestaModificacion;
 
             //desde la primera vuelta debe cumplirse la condicion
             while (!cerrarMenu)
@@ -54,7 +55,13 @@ namespace menuCajero{
                        
                         break;
                     case 3:
-                        Console.WriteLine("[INFO] - Se ejecuta caso 3");
+                        Console.WriteLine("[INFO] - MODIFICAR CLIENTE");
+                        do
+                        {
+                            ci.modificarCliente(listaClientes);
+                            Console.WriteLine("Quieres seguir modificando los datos s/n");
+                            respuestaModificacion = Console.ReadLine();
+                        } while (respuestaModificacion == "s");
                         break;
                     case 4:
                         Console.WriteLine("[INFO] - Se ejecuta caso 4");
