@@ -17,6 +17,18 @@ namespace menuCajero.Servicios
         /// <param name="listaAntigua"></param>
         public void darAltaCliente(List<ClienteDto> listaAntigua);
 
+        /// <summary>
+        /// Metodo que pregunta y permite modificar el valor de los campos de un cliente
+        /// msm - 22112023
+        /// </summary>
+        /// <param name="listaAntigua"></param>
+
         public void modificarCliente(List<ClienteDto> listaAntigua);
+        /// <summary>
+        /// Borrar cliente 
+        /// msm - 281123
+        /// </summary>
+        /// <param name="listaAntigua"></param>
+        public void borrarClientes(List<ClienteDto> listaAntigua);
     }
 }

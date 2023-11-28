@@ -24,5 +24,7 @@ namespace menuCajero.Servicios
         /// <returns>un entero con la opcion seleccionada</returns>
         public int mostrarMenuYSeleccion();
         void mostrarMenuYSeleccionada();
+
+        public string pedirDNI();
     }
 }

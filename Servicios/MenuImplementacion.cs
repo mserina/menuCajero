@@ -26,9 +26,10 @@ namespace menuCajero.Servicios
             Console.WriteLine("0. Cerrar aplicacion");
             Console.WriteLine("1. Darse de alta");
             Console.WriteLine("2. Dar cuenta de alta");
-            Console.WriteLine("3. Sacar dinero");
-            Console.WriteLine("4. Transferir dinero");
+            Console.WriteLine("3. Modificar clientes");
+            Console.WriteLine("4. Borrar clientes");
             Console.WriteLine("5. Historial de operaciones");
+            Console.WriteLine("6. Historial de clientes");
             Console.WriteLine("#####################################");
             Console.WriteLine("Seleccione opcion");
 
@@ -42,6 +43,13 @@ namespace menuCajero.Servicios
         public void mostrarMenuYSeleccionada()
         {
             throw new NotImplementedException();
+        }
+
+        public string pedirDNI()
+        {
+            Console.WriteLine("Inserte DNI");
+            string DNIIntroducido = Console.ReadLine();
+            return DNIIntroducido;
         }
     }   
 }

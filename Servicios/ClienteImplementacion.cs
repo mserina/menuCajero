@@ -128,5 +128,48 @@ namespace menuCajero.Servicios
             }
             
         }
+
+        public void borrarClientes(List<ClienteDto> listaAntigua)
+        {
+            MenuInterfaz mi = new MenuImplementacion();
+            string DNIIntroducido = mi.pedirDNI();
+
+            //OBBJETO ESPECIFICO //se elimina por refwerncia de memoria no por campos
+            ClienteDto clienteABorrar = new ClienteDto();
+            foreach(ClienteDto cliente in listaAntigua)
+            {
+                clienteABorrar = cliente;
+                break;
+            }
+            listaAntigua.Remove(clienteABorrar);
+
+
+
+            /*
+            //Posicion 
+            int it;
+            bool borrar = false;
+            for (it = 0; it < listaAntigua.Count; it++)
+            {
+                if (listaAntigua[it].DniCliente.Equals(DNIIntroducido))
+                {
+                    borrar = true;
+                    break;
+                }
+            }
+            if (borrar)
+            {
+                listaAntigua.RemoveAt(it);
+            }
+            else
+            {
+                Console.WriteLine("No existe el cliente");
+            }
+            */
+
+
+
+        }
+
     }
 }

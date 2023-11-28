@@ -44,6 +44,7 @@ namespace menuCajero{
                         Console.WriteLine("[INFO] - ALTA NUEVO CLIENTE");
                         ci.darAltaCliente(listaClientes);
                         
+                        
                         break;
                     case 2:
                         Console.WriteLine("[INFO] - CREAR NUEVA CUENTA");
@@ -64,10 +65,18 @@ namespace menuCajero{
                         } while (respuestaModificacion == "s");
                         break;
                     case 4:
-                        Console.WriteLine("[INFO] - Se ejecuta caso 4");
+                        Console.WriteLine("[INFO] - ELIMINAR UN CLIENTE");
+                        ci.borrarClientes(listaClientes);
                         break;
                     case 5:
                         Console.WriteLine("[INFO] - Se ejecuta caso 5");
+                        break;
+                    case 6:
+                        Console.WriteLine("[INFO] - Se ejecuta caso 6");
+                        foreach(ClienteDto clienteDto in listaClientes)
+                        {
+                            Console.WriteLine(clienteDto.ToString());
+                        }
                         break;
                     default:
                         Console.WriteLine("[INFO] - No existe esa opcion");
