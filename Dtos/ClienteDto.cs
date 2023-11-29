@@ -70,14 +70,14 @@ namespace menuCajero.Dtos
         override
         public string ToString()
         {
-            string clienteString = "Nombre" + this.nombreCliente
+            string clienteString = "Nombre: " + this.nombreCliente
             + " Apellidos: " + this.apellidosCliente +
             " DNI: " + this.dniCliente +
             " Fecha Nacimiento: " + this.fchaNacimientoCliente +
             " Email: " + this.emailCliente +
-            "Tlf" + this.tlfCliente +
-            "Fecha Alta" + this.FchaAltaCliente +
-            "Fecha Baja" + this.fchaBajaCliente;
+            " Tlf: " + this.tlfCliente +
+            " Fecha Alta: " + this.FchaAltaCliente +
+            " Fecha Baja: " + this.fchaBajaCliente;
 
             return clienteString;
         }

@@ -68,65 +68,115 @@ namespace menuCajero.Servicios
         {
             Console.WriteLine("Inserte DNI");
             string DNIIntroducido = Console.ReadLine();
+            bool cerrarMenu = false;
+            int opcionSeleccionada;
 
             foreach (ClienteDto cliente in listaAntigua)
             {
                 if (DNIIntroducido.Equals(cliente.DniCliente)){
 
-                    Console.WriteLine("Quiere cambiar el Nombre s/n");
-                    string respuesta1=Console.ReadLine();
-                    if(respuesta1 == "s")
+                    while (!cerrarMenu)
                     {
-                        Console.WriteLine("Introduzca un nombre");
-                        cliente.NombreCliente = Console.ReadLine();
-                    }
+                        opcionSeleccionada = mostrarMenu();
+                        switch(opcionSeleccionada)
+                        {
+                            case 0:
+                                Console.WriteLine("Quiere cambiar el Nombre s/n");
+                                string respuesta1 = Console.ReadLine();
+                                if (respuesta1 == "s")
+                                {
+                                    Console.WriteLine("Introduzca un nombre");
+                                    cliente.NombreCliente = Console.ReadLine();
+                                }
+                                break;
+                            case 1:
+                                Console.WriteLine("Quiere cambiar el Apellido s/n");
+                                string respuesta2 = Console.ReadLine();
+                                if (respuesta2 == "s")
+                                {
+                                    Console.WriteLine("Introduzca un Apèllido");
+                                    cliente.ApellidosCliente = Console.ReadLine();
+                                }
+                                break;
+                            case 2:
+                                Console.WriteLine("Quiere cambiar el Fecha de nacimiento s/n");
+                                string respuesta3 = Console.ReadLine();
+                                if (respuesta3 == "s")
+                                {
+                                    Console.WriteLine("Introduzca un Fecha de nacimiento");
+                                    cliente.FchaNacimientoCliente = Console.ReadLine();
+                                }
+                                break;
+                            case 3:
+                                Console.WriteLine("Quiere cambiar el email s/n");
+                                string respuesta4 = Console.ReadLine();
+                                if (respuesta4 == "s")
+                                {
+                                    Console.WriteLine("Introduzca un email");
+                                    cliente.EmailCliente = Console.ReadLine();
+                                }
+                                break;
 
-                    Console.WriteLine("Quiere cambiar el Apellido s/n");
-                    string respuesta2 = Console.ReadLine();
-                    if (respuesta2 == "s")
-                    {
-                        Console.WriteLine("Introduzca un Apèllido");
-                        cliente.ApellidosCliente = Console.ReadLine();
-                    }
+                            case 4:
+                                Console.WriteLine("Quiere cambiar el telefono s/n");
+                                string respuesta5 = Console.ReadLine();
+                                if (respuesta5 == "s")
+                                {
+                                    Console.WriteLine("Introduzca un telefono");
+                                    cliente.TlfCliente = Int32.Parse(Console.ReadLine());
+                                }
+                                break;
+                            case 5:
+                                Console.WriteLine("Quiere cambiar el Fecha de alta s/n");
+                                string respuesta6 = Console.ReadLine();
+                                if (respuesta6 == "s")
+                                {
+                                    Console.WriteLine("Introduzca un Fecha de alta");
+                                    cliente.FchaAltaCliente = Console.ReadLine();
+                                }
+                                break;
 
-                    Console.WriteLine("Quiere cambiar el Fecha de nacimiento s/n");
-                    string respuesta3 = Console.ReadLine();
-                    if (respuesta3 == "s")
-                    {
-                        Console.WriteLine("Introduzca un Fecha de nacimiento");
-                        cliente.FchaNacimientoCliente = Console.ReadLine();
-                    }
+                                case 6:
+                                    Console.WriteLine(cliente.ToString());
+                                break;
 
-                    Console.WriteLine("Quiere cambiar el email s/n");
-                    string respuesta4 = Console.ReadLine();
-                    if (respuesta4 == "s")
-                    {
-                        Console.WriteLine("Introduzca un email");
-                        cliente.EmailCliente = Console.ReadLine();
-                    }
+                                case 7:
+                                    Console.WriteLine("Saliendo");
+                                    cerrarMenu = true;
+                                break;
 
-                    Console.WriteLine("Quiere cambiar el telefono s/n");
-                    string respuesta5 = Console.ReadLine();
-                    if (respuesta5 == "s")
-                    {
-                        Console.WriteLine("Introduzca un telefono");
-                        cliente.TlfCliente = Int32.Parse(Console.ReadLine());
-                    }
+                                
+                                   
+                        }
+                    }     
 
-                    Console.WriteLine("Quiere cambiar el Fecha de alta s/n");
-                    string respuesta6 = Console.ReadLine();
-                    if (respuesta6 == "s")
-                    {
-                        Console.WriteLine("Introduzca un Fecha de alta");
-                        cliente.FchaAltaCliente = Console.ReadLine();
-                    }
-
-                    Console.WriteLine(cliente.ToString());
-
+                }
+                else 
+                {
+                    Console.WriteLine("No existe ningun cliente con ese DNI");
+                    return;
                 }
 
             }
             
+        }
+
+        private int mostrarMenu()
+        {
+            int opcionSelecionada;
+            Console.WriteLine("0. Modificar Nombre");
+            Console.WriteLine("1. Modificar Apellido");
+            Console.WriteLine("2. Modificar Fecha de nacimiento");
+            Console.WriteLine("3. Modificar email");
+            Console.WriteLine("4. Modificar telefono");
+            Console.WriteLine("5. Modificar Fecha de alta");
+            Console.WriteLine("6. Mostrar cambios");
+            Console.WriteLine("7. Salir");
+            opcionSelecionada = Console.ReadKey(true).KeyChar - ('0');
+            return opcionSelecionada;
+
+
+
         }
 
         public void borrarClientes(List<ClienteDto> listaAntigua)
@@ -134,7 +184,7 @@ namespace menuCajero.Servicios
             MenuInterfaz mi = new MenuImplementacion();
             string DNIIntroducido = mi.pedirDNI();
 
-            //OBBJETO ESPECIFICO //se elimina por refwerncia de memoria no por campos
+            //OBBJETO ESPECIFICO //se elimina por referncia de memoria no por campos
             ClienteDto clienteABorrar = new ClienteDto();
             foreach(ClienteDto cliente in listaAntigua)
             {
